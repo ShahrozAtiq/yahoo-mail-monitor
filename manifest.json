@@ -1,0 +1,27 @@
+{
+  "name": "Yahoo Mail Monitor",
+  "version": "1.0.0",
+  "description": "Monitor Your Yahoo Mails",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "downloads",
+    "scripting"
+  ],
+  "host_permissions": ["https://mail.yahoo.com/"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["monitorScript.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Yahoo Mail Monitor",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
